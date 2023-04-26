@@ -43,7 +43,9 @@ body {
 	height: 50px;
 	width: 50px;
 }
-.navbar .bar {
+.bar1,
+.bar2,
+.bar3 {
 	background-color: black;
 	height: 4px;
 	width: 36px;
@@ -52,6 +54,9 @@ body {
 }
 .navbar .hamburger {
 	display: none;
+}
+.navbar .hamburger:hover {
+	cursor: pointer;
 }
 .project-grid {
 	display: grid;
@@ -178,6 +183,7 @@ body {
 		justify-content: center;
 		align-items: center;
 	}
+
 	.project-grid {
 		grid-template-areas:
 			"eth eth"
@@ -195,5 +201,75 @@ body {
 	.footer {
 		padding: 24px;
 		font-size: 10px;
+	}
+}
+.mobilenav {
+	width: 65px;
+	background-color: white;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	right: -160px;
+	padding: 16px;
+	transition: transform 0.3s;
+}
+.mobilenav img {
+	width: 24px;
+	height: 24px;
+}
+.opendrawer {
+	transform: translateX(-160px);
+}
+.mobilenav a {
+	text-decoration: none;
+	color: black;
+	margin: 16px 0;
+}
+.mobilenav a:hover {
+	text-decoration: underline;
+}
+
+.animatebar1 {
+	animation: flipbar1 0.5s;
+	animation-fill-mode: forwards;
+}
+.animatebar2 {
+	animation: fadebar2 0.5s;
+	animation-fill-mode: forwards;
+}
+.animatebar3 {
+	animation: flipbar3 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadebar2 {
+	from {
+		transform: scaleX(1);
+		opacity: 1;
+	}
+	to {
+		transform: scaleX(0);
+		opacity: 0;
+	}
+}
+@keyframes flipbar1 {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(45deg) translate(4px, 10px);
+	}
+}
+@keyframes flipbar3 {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(-45deg) translate(4px, -10px);
 	}
 }
